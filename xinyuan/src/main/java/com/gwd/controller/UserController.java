@@ -16,11 +16,11 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import com.gwd.service.UserService;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
-@CrossOrigin
 @RequestMapping(value = "/user", method = RequestMethod.POST)
 @RestController
 public class UserController {
@@ -36,21 +36,23 @@ public class UserController {
     private UserDao userDao;
 
 
+
+
     // 用户登录
     @Transactional
     @RequestMapping("/login")
-    public ResponseData login(String phone, String password, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
-        ResponseData responseData = new ResponseData();
+    public ModelAndView login(String phone, String password, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        ModelAndView modelAndView = new ModelAndView();
 //        System.out.println("phone:"+phone);
 //        System.out.println("password:"+password);
         boolean isLogin = userService.login(phone, password, response);
         if (isLogin == false) {
-           responseData.setStatusOther("账号密码错误");
-           return responseData;
+            modelAndView.setViewName("sign_in");
+            modelAndView.addObject("msg","账号或密码错误");
+           return modelAndView;
         }
-      //  System.out.println(isLogin);
-        responseData.setMsg("登录成功");
-        return responseData;
+        modelAndView.setViewName("index");
+        return modelAndView;
     }
 
 

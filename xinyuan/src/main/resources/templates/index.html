@@ -2,16 +2,168 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Insert title here</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>主页|星愿</title>
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/layui.css" media="all">
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
-<h1>Welcome! thymeleaf</h1>
-</head>
-<form action="user/login" method="post">
-    用户名:<input type="text" name="userName"/><br/>
-    密码:<input type="password" name="password"><br/>
-    <input type="submit" value="login"/>
-    <p>request.getServletContext().getContextPath()</p>
-</form>
+<div class="background-img"></div>
+<div id="left-nav">
+    <div id="profile">
+        <img src="/xinyuan/img/user/3">
+        <span>飞翔的小猪猪</span>
+    </div>
+    <div id="list">
+        <a href="#" id="account">
+            <span class="glyphicon glyphicon-home icon"></span>
+            <span class="description">账号</span>
+            <span class="glyphicon glyphicon-chevron-up up-down"></span>
+        </a>
+        <ul id="account-list">
+            <li><span class="glyphicon glyphicon-certificate logo"></span><span class="text">学生认证</span></li>
+        </ul>
+        <a href="#" id="setting">
+            <span class="glyphicon glyphicon-cog icon"></span>
+            <span class="description">设置</span>
+            <span class="glyphicon glyphicon-chevron-up up-down"></span>
+        </a>
+        <ul id="setting-list">
+            <li><span class="glyphicon glyphicon-user logo"></span><span class="text">更改用户名</span></li>
+            <li><span class="glyphicon glyphicon-picture logo"></span><span class="text">更改头像</span></li>
+            <li><span class="glyphicon glyphicon-pencil logo"></span><span class="text">更改签名</span></li>
+            <li><span class="glyphicon glyphicon-lock logo"></span><span class="text">修改密码</span></li>
+            <li><span class="glyphicon glyphicon-phone logo"></span><span class="text">修改手机号</span></li>
+        </ul>
+        <span></span>
+        <a href="#" id="moment">
+            <span class="glyphicon glyphicon-heart icon"></span>
+            <span class="description">动态</span>
+            <span class="glyphicon glyphicon-chevron-up up-down"></span>
+        </a>
+        <ul id="moment-list">
+            <li><span class="glyphicon glyphicon-plus logo"></span><span class="text">新增愿望</span></li>
+            <li><span class="glyphicon glyphicon-list logo"></span><span class="text">愿望清单</span></li>
+            <li><span class="glyphicon glyphicon-star logo"></span><span class="text">我的关注</span></li>
+            <li><span class="glyphicon glyphicon-envelope logo"></span><span class="text">好友私信</span></li>
+        </ul>
+        <a href="/xinyuan/user/out" id="sign-out">
+            <span class="glyphicon glyphicon-log-out icon"></span>
+            <span class="description">注销</span>
+            <!--<span class="glyphicon glyphicon-chevron-up up-down"></span>-->
+        </a>
+    </div>
+</div>
+<div id="content">
+    <div id="top-nav">
+        <img src="static/img/logo2.png">
+        <ul>
+            <li><a href="index.html" class="nav-item">首页</a></li>
+            <li><a href="#" class="nav-item">日榜</a></li>
+            <li><a href="#" class="nav-item">周榜</a></li>
+            <li><a href="#" class="nav-item">月榜</a></li>
+            <li><a href="#" class="nav-item">话题</a></li>
+        </ul>
+    </div>
+    <div class="main_banner">
+        <div class="main_banner_wrap">
+            <div class="main_banner_box" id="m_box">
+                <a href="javascript:void(0)" class="banner_btn js_pre">
+                    <span class="banner_btn_arrow"><i></i></span>
+                </a>
+                <a href="javascript:void(0)" class="banner_btn btn_next js_next">
+                    <span class="banner_btn_arrow"><i></i></span>
+                </a>
+                <ul>
+                    <li id="imgCard0">
+                        <a href="http://www.baidu.com" target="_blank"><span style="opacity:0;"></span></a>
+                        <img src="static/img/1.png" alt="">
+                        <p style="bottom:0">周杰伦粉丝版MV</p>
+                    </li>
+                    <li id="imgCard1">
+                        <a href="http://www.baidu.com" target="_blank"><span style="opacity:0.4;"></span></a>
+                        <img src="static/img/2.png" alt="">
+                        <p>乐侃有声节目第二期</p>
+                    </li>
+                    <li id="imgCard2">
+                        <a href="http://www.baidu.com" target="_blank"><span style="opacity:0.4;"></span></a>
+                        <img src="static/img/3.png" alt="">
+                        <p>乐见大牌：”荣“耀之声，”维“我独尊</p>
+                    </li>
+                    <li id="imgCard3">
+                        <a href="http://www.baidu.com" target="_blank"><span style="opacity:0.4;"></span></a>
+                        <img src="static/img/4.jpg" alt="">
+                        <p>王力宏四年心血结晶</p>
+                    </li>
+                    <li id="imgCard4">
+                        <a href="http://www.baidu.com" target="_blank"><span style="opacity:0.4;"></span></a>
+                        <img src="static/img/5.jpg" alt="">
+                        <p>MV精选：《武媚》女神团美艳大比拼</p>
+                    </li>
+                </ul>
+                <!--火狐倒影图层-->
+                <p id="rflt"></p>
+                <!--火狐倒影图层-->
+            </div>
+            <!--序列号按钮-->
+            <div class="btn_list">
+                <span class="curr"></span><span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+    <div class="topic">
+        <span>今日榜单</span>
+        <ol>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+        </ol>
+    </div>
+    <div class="topic">
+        <span>实现榜单</span>
+        <ol>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+        </ol>
+    </div>
+    <div class="topic">
+        <span>热门话题</span>
+        <ol>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+            <li>周杰伦写给蔡依林的歌</li>
+        </ol>
+    </div>
+</div>
+
+<script src="static/js/jquery.min.js"></script>
+<script src="static/bootstrap/js/bootstrap.min.js"></script>
+<script src="static/js/layui.js"></script>
+<script src="static/js/main.js"></script>
+<script src="static/js/index.js"></script>
 </body>
 </html>

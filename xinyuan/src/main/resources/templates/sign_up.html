@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>注册|星愿</title>
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/layui.css">
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/radar.css">
+</head>
+<body>
+<div id="background-img"></div>
+<div class="layui-container main-style">
+    <div class="layui-col-md8 layui-col-lg8 show-ball" id="canvas-area">
+        <div class="radar"></div>
+    </div>
+    <div class="layui-col-xs12 layui-col-sm12 layui-col-md4 layui-col-lg4 form-area">
+        <div class="sign-up-form">
+            <br>
+            <h3>用户注册</h3>
+            <hr>
+            <br>
+            <form action="http://120.77.32.233/xinyuan/user/register" method="post" class="form-horizontal"
+                  autocomplete="off">
+                <input type="text" name="username" class="form-control" id="user-field" placeholder="用户名">
+                <input type="password" name="password" class="form-control" id="psw-field" placeholder="密码">
+                <input type="password" class="form-control" id="psw-confirm" placeholder="确认密码">
+                <input type="text" name="phone" class="form-control" id="phone-field" placeholder="手机号">
+                <div id="verifying-field">
+                    <input type="text" name="vercode" class="form-control" id="verifying-code" placeholder="验证码">
+                    <button type="button" id="send-msg" class="btn btn-info">点击获取</button>
+                </div>
+                <button type="submit" class="btn-submit btn btn-danger btn-lg">注册</button>
+            </form>
+            <a href="sign_in.html" class="to-sign-up">已有账号？<span style="color: greenyellow">立即登录</span></a>
+            <hr>
+            <br>
+            <span id="info-label">第三方登录</span>
+            <br>
+            <button id="QQ-link" class="btn btn-danger"><img src="static/img/qq32.png"><span>&nbsp;QQ登录</span></button>
+            <button id="weibo-link" class="btn btn-info"><img src="static/img/sina32.png"><span>&nbsp;微博登录</span>
+            </button>
+        </div>
+    </div>
+</div>
+<script src="static/js/jquery.min.js"></script>
+<script src="static/bootstrap/js/bootstrap.min.js"></script>
+<script src="static/js/layui.js"></script>
+<!--<script src="static/js/show_profile.js"></script>-->
+<script src="static/js/sign.js"></script>
+</body>
+</html>
