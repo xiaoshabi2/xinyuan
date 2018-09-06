@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gwd.dao.WishDao">
+
+    <!--void addLikeNum(Integer id);-->
+    <!--void subLikeNum(Integer id);-->
+    <update id="addLikeNum">
+        update wish set like_num = like_num+1 where id = #{id}
+    </update>
+
+    <update id="subLikeNum">
+        update wish set like_num = like_num-1 where id = #{id}
+    </update>
+
+    <!--addCommentNum-->
+    <update id="addCommentNum">
+        update wish set comment_num = comment_num+1 where id = #{id}
+    </update>
+
+    <!--  void updateAnonymousAndOpen(@Param("id") Integer id,@Param("userId")Integer userId,@Param("anonymous") boolean anonymous,@Param("open") boolean open);-->
+    <update id="updateAnonymousAndOpen">
+        update wish set anonymous = #{anonymous},open = #{open } where id = #{id} and user_id = #{userId}
+    </update>
+
+    <!--  void deleteWish(@Param("id") Integer id,@Param("userId")Integer userId);-->
+    <delete id="deleteWish">
+        delete from wish where id = #{id} and user_id = #{userId}
+    </delete>
+
+</mapper> 

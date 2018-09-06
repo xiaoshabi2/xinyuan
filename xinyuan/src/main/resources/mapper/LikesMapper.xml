@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gwd.dao.LikesDao">
+
+<!--    Likes getByUserIdAndWishId(@Param("userId")Integer userId,@Param("wishId")Integer wishId);-->
+    <select id="getByUserIdAndWishId" resultType="Likes">
+        select * from likes where user_id = #{userId} and wish_id = #{wishId}
+    </select>
+
+<!--    void updateStatusByUserIdAndWishId(@Param("userId")Integer userId,@Param("wishId")Integer wishId);-->
+    <update id="updateStatusByUserIdAndWishId">
+        update likes set state=#{state} where user_id = #{userId} and wish_id = #{wishId}
+    </update>
+
+
+</mapper> 

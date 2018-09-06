@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gwd.dao.SmsDao">
+
+    <!--    Sms getByPhoneAndVercode(@Param("phone") String phone,@Param("vercode") String vercode);-->
+    <select id="getByPhoneAndVercode" resultType="Sms">
+        select * from sms where phone = #{phone} and  ver_code = #{vercode} and has_use = false
+    </select>
+
+    
+    <!--    Sms updateUseById(Integer id);-->
+    <update id="updateUseById">
+        update sms set has_use = true where id = #{id}
+    </update>
+</mapper> 
