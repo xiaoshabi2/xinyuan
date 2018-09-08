@@ -13,5 +13,7 @@ public interface UserDao extends BaseMapper<User> {
     User getUserByPhone(String phone); // 通过手机号获取用户
     void updateUserPasswordByPhone(@Param("phone") String phone,@Param("password") String password); // 通过手机号修改用户密码
     void updateAvatarById(@Param("id") Integer id,@Param("avatar") String avatar); // 通过id更新头像
+    String getUserName(Integer id); // 获取用户头像
+
 }
 

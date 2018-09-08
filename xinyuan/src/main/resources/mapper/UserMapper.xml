@@ -13,7 +13,10 @@
           select * from user where phone = #{phone} and password = #{password}
      </select>
 
-
+    <!--    String getUserName(Integer id); // 获取用户头像-->
+    <select id="getUserName" resultType="String">
+          select username from user where id = #{id}
+     </select>
 
     <!--  Integer getUserByToken(@Param("token") String token); // 通过token用户id-->
     <select id="getUserByToken" resultType="Integer">

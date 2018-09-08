@@ -162,5 +162,5 @@ a:hover,a:focus,a:visited,a:link{
 #photo-area img {
     width: 32px;
     height: 32px;
-    border: 1px solid white;
+    /*border: 1px solid white;*/
 }

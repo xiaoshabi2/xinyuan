@@ -5,7 +5,7 @@
     width: 70%;
     height: 300px;
     top: 120px;
-    border: 1px solid hotpink;
+    /*border: 1px solid hotpink;*/
     right: 18%;
 }
 
@@ -63,7 +63,7 @@
     top: 500px;
     width: 60%;
     /*left: 10%;*/
-    border: 1px solid darkorchid;
+    /*border: 1px solid darkorchid;*/
     right: 25%;
 }
 

@@ -1,9 +1,17 @@
 package com.gwd.controller;
 
+import com.gwd.dao.SmsDao;
+import com.gwd.dao.UserDao;
+import com.gwd.entity.ResponseData;
+import com.gwd.entity.Sms;
+import com.gwd.entity.User;
 import com.gwd.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
@@ -16,6 +24,12 @@ import java.io.UnsupportedEncodingException;
 public class PageController {
 
     @Resource
+    private UserDao userDao;
+
+    @Resource
+    private SmsDao smsDao;
+
+    @Resource
     private UserService userService;
 
     @RequestMapping("/index")
@@ -26,6 +40,24 @@ public class PageController {
         }
         return "index.html";
     }
+
+    @RequestMapping("/sign_up")
+    public String signUp(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        return "sign_up.html";
+    }
+
+    @RequestMapping("/sign_in")
+    public String signin(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        return "sign_in.html";
+    }
+
+
+    @RequestMapping("/wish")
+    public String wishId(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        System.out.println("sss");
+        return "moment-detail";
+    }
+
 
 
     // 用户登录
@@ -43,6 +75,16 @@ public class PageController {
         }
         modelAndView.setViewName("index");
         return modelAndView;
+    }
+
+
+
+
+    // 用户退出登录
+    @RequestMapping(value = "/out",method = RequestMethod.GET)
+    public ModelAndView out(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        userService.out(request, response);
+        return new ModelAndView("sign_in");
     }
 
 

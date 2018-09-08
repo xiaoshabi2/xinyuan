@@ -13,8 +13,8 @@
 <div class="background-img"></div>
 <div id="left-nav">
     <div id="profile">
-        <img src="/xinyuan/img/user/3">
-        <span>飞翔的小猪猪</span>
+        <img src="static/img/user.png">
+        <span></span>
     </div>
     <div id="list">
         <a href="#" id="account">
@@ -23,7 +23,7 @@
             <span class="glyphicon glyphicon-chevron-up up-down"></span>
         </a>
         <ul id="account-list">
-            <li><span class="glyphicon glyphicon-certificate logo"></span><span class="text">学生认证</span></li>
+            <li><a href="#"><span class="glyphicon glyphicon-certificate logo"></span><span class="text">学生认证</span></a></li>
         </ul>
         <a href="#" id="setting">
             <span class="glyphicon glyphicon-cog icon"></span>
@@ -31,11 +31,11 @@
             <span class="glyphicon glyphicon-chevron-up up-down"></span>
         </a>
         <ul id="setting-list">
-            <li><span class="glyphicon glyphicon-user logo"></span><span class="text">更改用户名</span></li>
-            <li><span class="glyphicon glyphicon-picture logo"></span><span class="text">更改头像</span></li>
-            <li><span class="glyphicon glyphicon-pencil logo"></span><span class="text">更改签名</span></li>
-            <li><span class="glyphicon glyphicon-lock logo"></span><span class="text">修改密码</span></li>
-            <li><span class="glyphicon glyphicon-phone logo"></span><span class="text">修改手机号</span></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user logo"></span><span class="text">更改昵称</span></a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-picture logo"></span><span class="text">更改头像</span></a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-pencil logo"></span><span class="text">更改签名</span></a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-lock logo"></span><span class="text">修改密码</span></a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-phone logo"></span><span class="text">修改号码</span></a></li>
         </ul>
         <span></span>
         <a href="#" id="moment">
@@ -44,12 +44,12 @@
             <span class="glyphicon glyphicon-chevron-up up-down"></span>
         </a>
         <ul id="moment-list">
-            <li><span class="glyphicon glyphicon-plus logo"></span><span class="text">新增愿望</span></li>
-            <li><span class="glyphicon glyphicon-list logo"></span><span class="text">愿望清单</span></li>
-            <li><span class="glyphicon glyphicon-star logo"></span><span class="text">我的关注</span></li>
-            <li><span class="glyphicon glyphicon-envelope logo"></span><span class="text">好友私信</span></li>
+            <li><a href="add_moment.html"><span class="glyphicon glyphicon-plus logo"></span><span class="text">新增愿望</span></a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-list logo"></span><span class="text">愿望清单</span></a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-star logo"></span><span class="text">我的关注</span></a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-envelope logo"></span><span class="text">好友私信</span></a></li>
         </ul>
-        <a href="/xinyuan/user/out" id="sign-out">
+        <a href="/xinyuan/out" id="sign-out">
             <span class="glyphicon glyphicon-log-out icon"></span>
             <span class="description">注销</span>
             <!--<span class="glyphicon glyphicon-chevron-up up-down"></span>-->
@@ -58,7 +58,7 @@
 </div>
 <div id="content">
     <div id="top-nav">
-        <img src="static/img/logo2.png">
+        <a href="index.html"><img src="static/img/logo2.png"></a>
         <ul>
             <li><a href="index.html" class="nav-item">首页</a></li>
             <li><a href="#" class="nav-item">日榜</a></li>
@@ -113,49 +113,21 @@
             </div>
         </div>
     </div>
-    <div class="topic">
+    <div class="topic" id="today-list">
         <span>今日榜单</span>
         <ol>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
+
         </ol>
     </div>
-    <div class="topic">
+    <div class="topic" id="real-list">
         <span>实现榜单</span>
         <ol>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
         </ol>
     </div>
-    <div class="topic">
+    <div class="topic" id="major-topic">
         <span>热门话题</span>
         <ol>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
-            <li>周杰伦写给蔡依林的歌</li>
+
         </ol>
     </div>
 </div>

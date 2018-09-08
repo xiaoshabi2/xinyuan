@@ -1,6 +1,12 @@
 package com.gwd.controller;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.gwd.dao.CommentDao;
+import com.gwd.dao.UserDao;
+import com.gwd.dao.WishDao;
+import com.gwd.entity.Comment;
 import com.gwd.entity.ResponseData;
+import com.gwd.entity.Wish;
 import com.gwd.service.UserService;
 import com.gwd.service.WishService;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,6 +17,8 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 
 
 @CrossOrigin
@@ -30,6 +38,16 @@ public class WishController {
 
     @Resource
     private WishService wishService;
+
+
+    @Resource
+    private WishDao wishDao;
+
+    @Resource
+    private UserDao userDao;
+
+    @Resource
+    private CommentDao commentDao;
 
 
 
@@ -54,6 +72,27 @@ public class WishController {
         }
         return responseData;
     }
+
+
+    @RequestMapping("/get/{wishId}")
+    public ResponseData getWishAll(@PathVariable("wishId") Integer wishId,HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        ResponseData responseData = new ResponseData();
+        Integer userId = userService.isLogin(request, response);
+        if (userId == null) {
+            responseData.setStatusNoLogin();
+            return responseData;
+        } else {
+            Map<String,Object> map = new HashMap<>();
+            Wish wish = wishDao.selectById(wishId);
+            map.put("wish",wish);
+            map.put("user",userDao.selectById(wish.getUserId()));
+            map.put("comment",commentDao.getAll(wishId));
+            responseData.setData(map);
+        }
+        return responseData;
+    }
+
+
 
 
     @RequestMapping("/get/{remark}/{page}/{date}")

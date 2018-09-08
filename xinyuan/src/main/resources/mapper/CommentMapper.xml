@@ -3,6 +3,20 @@
 <mapper namespace="com.gwd.dao.CommentDao">
 
 
+    <resultMap type="CommentResult" id="CommentResult">
+        <id property="id" column="id"/>
+        <result property="userId" column="user_id"/>
+        <result property="wishId" column="wish_id"/>
+        <result property="content" column="content"/>
+        <result property="createTime" column="create_time"/>
+        <association property="username" column="user_id"
+                     select="com.gwd.dao.UserDao.getUserName"></association>
+    </resultMap>
 
+
+    <!--       List<Comment> getAll(Integer wishId);-->
+    <select id="getAll" resultMap="CommentResult">
+        select * from comment where wish_id = #{wishId} order by create_time desc
+    </select>
 
 </mapper> 
